@@ -1,0 +1,61 @@
+.chart-general {
+    height: 6.2vmin; /* Always keep it ~ 100 / (MONT_COUNT + 1) - 0.5 */
+    width: 7.5vmin; /* Always keep it ~ 100 / (YEAR_COUNT + 1) - 0.5 */
+    margin: 0.5vmin;
+}
+
+.chart-row {
+    justify-content: center;
+}
+
+.year-row {
+    height: 3vmin;
+    width: 7.5vmin;
+    margin: 0.5vmin;
+}
+
+.year-desc, .month-desc {
+    display: flex;
+    font-size: 1.2vmin;
+}
+
+.year-desc {
+    padding-bottom: 0.5vmin;
+    align-items:flex-end;
+    justify-content:center;
+    border-bottom: solid 1px black;
+}
+
+.month-desc {    
+    padding-right: 0.5vmin;
+    align-items:center;
+    justify-content:flex-end;
+    border-right: solid 1px black;
+}
+
+#generic {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 1vmin;
+}
+
+#fileInput {
+    width: 36vmin;
+}
+
+#mapping {
+    width: 56vmin;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.map-box {
+    height: 5vmin;
+    width: 4vmin;
+}
+
+.info {
+    font-size: 1.2vmin;
+}
