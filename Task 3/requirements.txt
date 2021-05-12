@@ -1,0 +1,11 @@
+# Python Basics
+wheel
+pillow
+python-dotenv
+PyYAML
+ipython
+requests
+
+# Django
+django==3.1
+djangorestframework

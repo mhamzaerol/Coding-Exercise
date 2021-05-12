@@ -1,0 +1,28 @@
+#header-field {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+#search-field {
+    margin-top: 2rem;
+}
+
+#visual-field {
+    justify-content: center;
+}
+
+#visualizer-error {
+    text-align: center;
+}
+
+.visual-field-element {
+    width: 100%;
+}
+
+body {
+/*    background: #00151c; */
+}
+#visualizer {
+    background: #0e3040;
+    color: #67809f;
+}
