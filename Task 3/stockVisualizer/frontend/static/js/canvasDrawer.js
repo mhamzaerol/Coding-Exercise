@@ -185,7 +185,6 @@ class CanvasDrawer {
         .scaleLinear()
         .domain([yMinVolume, yMaxVolume])
         .range([height, 0]);
-        console.log(data);
         svg
         .selectAll()
         .data(volData)

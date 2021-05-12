@@ -1,5 +1,18 @@
+var errMode = false;
+
+modeToggle = () => {
+    errMode = !errMode;
+    $('#visualizer-error').toggleClass('collapse');
+    $('#visualizer').toggleClass('collapse');
+};
+
 ajaxError = (errMsg) => {
-    console.log(errMsg); // TODO Change it to write on the div
+    if(!errMode) {
+        modeToggle();
+    }
+    $('#visualizer-error').text(
+        errMsg
+    );
 };
 
 $('#search-button').click(() => {
@@ -17,8 +30,13 @@ $('#search-button').click(() => {
         if('Error Message' in data) {
             ajaxError(data['Error Message']);
         }
-        $('#visualizer').empty();
-        CanvasDrawer.draw($('#visualizer'), data[`Time Series (${interval}min)`], interval);
+        else {
+            if(errMode) {
+                modeToggle();
+            }
+            $('#visualizer').empty();
+            CanvasDrawer.draw($('#visualizer'), data[`Time Series (${interval}min)`], interval);
+        }
     }).fail((data) => {
         ajaxError(data['statusText']);
     });

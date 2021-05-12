@@ -18,12 +18,14 @@ class StockDataView(generics.ListAPIView):
 
 def get_stock_data(request):
     api_key_obj = APIKey.objects.last()
-    api_key = api_key_obj.key
-    if not api_key_obj:
+    print(api_key_obj)
+    if api_key_obj == None:
         if not TEST:
             return HttpResponse('Please add an API key to use this service', status=500)
         api_key = 'AK4LITYUAYB5FWD9'
-
+    else:
+        api_key = api_key_obj.key
+        
     if request.method == 'GET':
         symbol, interval = request.GET.get('symbol', ''), request.GET.get('interval', '')
         latest_query = StockData.objects.filter(symbol=symbol).last()
